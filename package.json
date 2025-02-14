@@ -1,0 +1,24 @@
+{
+  "name": "99-webdriverio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@serenity-js/core": "^3.31.8",
+    "@serenity-js/cucumber": "^3.31.8",
+    "@serenity-js/webdriverio": "^3.31.8",
+    "@wdio/appium-service": "^9.9.0",
+    "@wdio/cucumber-framework": "^9.9.0",
+    "cucumber": "^6.0.7",
+    "webdriverio": "^9.9.0"
+  },
+  "dependencies": {
+    "@serenity-js/web": "^3.31.8"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "serenity": {
+      "runner": "cucumber",
+      "requirementsDirectory": "features",
+      "sourceDirectory": "target/site/serenity"
+    }
+  }
+  
