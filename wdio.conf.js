@@ -1,29 +1,17 @@
-exports.config = {
+const config = {
     runner: 'local',
-    specs: ['./features/**/*.feature'],
+    specs: ['./test/testcases/**/*.js'],
+    port: 4724,
     exclude: [],
     maxInstances: 1,
-    cucumberOpts: {
-        require: ['./step_definitions/**/*.js'],
-        backtrace: false,
-        requireModule: [],
-        dryRun: false,
-        failFast: false,
-        snippets: true,
-        source: true,
-        profile: [],
-        strict: false,
-        tagExpression: '',
-        timeout: 60000,
-        ignoreUndefinedDefinitions: false
-    },
     capabilities: [{
-        platformName: "Android",
-        "appium:deviceName": "emulator-5554",
-        "appium:platformVersion": "11.0",
+        "platformName": "Android",
+        "appium:deviceName": "Pixel_3a_API_31",
+        "appium:platformVersion": "12.0",
         "appium:automationName": "UiAutomator2",
-        "appium:app": "/Users/efishery/Documents/Repo/99-automation-app/android.wdio.native.app.v1.0.8.apk",
-        "appium:autoGrantPermissions": true
+        "appium:appPackage": "com.wdiodemoapp",
+        "appium:appActivity": "com.wdiodemoapp.MainActivity",
+        "appium:autoGrantPermissions": "true"
     }],
     logLevel: 'info',
     bail: 0,
@@ -31,6 +19,15 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     services: ['appium'],
-    framework: 'cucumber',
-    reporters: ['allure']
+    framework: 'mocha',
+    reporters: [['allure', {outputDir: 'allure-results'}]],
+
+    // Options to be passed to Mocha.
+    // See the full list at http://mochajs.org/
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    },
 };
+
+module.exports = { config };

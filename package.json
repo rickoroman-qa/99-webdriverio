@@ -14,7 +14,7 @@
     "@serenity-js/cucumber": "^3.31.8",
     "@serenity-js/webdriverio": "^3.31.8",
     "@wdio/appium-service": "^9.9.0",
-    "@wdio/cucumber-framework": "^9.9.0",
+    "@wdio/mocha-framework": "^9.9.0",
     "cucumber": "^6.0.7",
     "webdriverio": "^9.9.0"
   },
