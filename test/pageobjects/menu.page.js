@@ -5,8 +5,8 @@ export class MenuPage{
     get textMenuForms() {return $('//android.view.View[@content-desc="Forms"]');}
     get textMenuLogin() {return $('//android.view.View[@content-desc="Login"]');}
 
-    async selectMenuCatalog() {
-        allureReporter.startStep('Select Menu "Catalog"');
+    async selectMenuForms() {
+        allureReporter.startStep('Select Menu "Forms"');
         await this.textMenuForms.click();
         allureReporter.endStep();
     }

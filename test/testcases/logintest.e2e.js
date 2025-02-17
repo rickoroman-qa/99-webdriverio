@@ -1,11 +1,11 @@
-import CommonAction from '.../pageobjects/common.action.js';
-import LoginPage from '.../pageobjects/login.page.js';
-import MenuPage from '.../pageobjects/menu.page.js';
+import CommonAction from '../pageobjects/common.action.js';
+import LoginPage from '../pageobjects/login.page.js';
+import MenuPage from '../pageobjects/menu.page.js';
 
 describe('Simple test for Login into Demo Apps', () => {
     
     beforeEach(async () => {await CommonAction.launchApp();});
-    //afterEach(async () => {await CommonAction.closeApp();});
+    afterEach(async () => {await CommonAction.closeApp();});
 
     it('As an Android user, I should be able to see Error when input incorrect Username and Password', async () => {
         await MenuPage.selectMenuLogIn();
