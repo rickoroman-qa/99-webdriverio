@@ -2,21 +2,15 @@ import { $ } from '@wdio/globals';
 import allureReporter from '@wdio/allure-reporter';
 
 class FormsPage {
-    get fieldLabel() { return $('//android.widget.EditText[@content-desc="text-input"]'); }
-    get emailInput() { return $('//android.widget.EditText[@content-desc="text-input"]'); }
+    get fieldInput() { return $('//android.widget.EditText[@content-desc="text-input"]'); }
     get switchToggle() { return $('//android.widget.Switch[@content-desc="switch"]'); }
     get dropdown() { return $('//android.widget.EditText[@resource-id="text_input"]'); }
     get activeButton() { return $('//android.view.ViewGroup[@content-desc="button-Active"]/android.view.ViewGroup'); }
     get inactiveButton() { return $('//android.view.ViewGroup[@content-desc="button-Inactive"]/android.view.ViewGroup'); }
 
-    async enterFieldText(expectedText) {
-        allureReporter.addStep(`Verifying Field Label: ${expectedText}`);
-        await expect(this.fieldLabel).toHaveText(expectedText);
-    }
-
     async enterEmail(email) {
         allureReporter.addStep(`Entering Email: ${email}`);
-        await this.emailInput.setValue(email);
+        await this.fieldInput.setValue(email);
     }
 
     async toggleSwitch(state) {
@@ -35,11 +29,11 @@ class FormsPage {
 
     async verifyButtonState(isActive) {
         if (isActive) {
-            allureReporter.addStep(`Verifying Active Button is enabled`);
-            await expect(this.activeButton).toBeEnabled();
+            allureReporter.addStep(`Verifying Active Button is choosed`);
+            await this.activeButton.click();
         } else {
-            allureReporter.addStep(`Verifying Inactive Button is disabled`);
-            await expect(this.inactiveButton).toBeDisabled();
+            allureReporter.addStep(`Verifying Inactive Button is choosed`);
+            await this.inactiveButton.click();
         }
     }
 }

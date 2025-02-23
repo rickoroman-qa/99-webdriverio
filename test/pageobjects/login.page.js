@@ -5,7 +5,7 @@ export class LoginPage{
     get textHeaderLogin() {return $('//android.widget.TextView[@text="Login / Sign up Form"]');}
     get inputEmail() {return $('//android.widget.EditText[@content-desc="input-email"]');}
     get inputPassword() {return $('//android.widget.EditText[@content-desc="input-password"]');}
-    get buttonLogin() {return $('//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup');}
+    get buttonLogin() {return $('//android.widget.TextView[@text="LOGIN"]');}
     get textErrorLogin() {return $('//android.widget.TextView[@text="Please enter at least 8 characters"]');}
     get testSuccessLogin() {return $('//android.widget.TextView[@resource-id="android:id/message"]');}
 
@@ -41,3 +41,5 @@ export class LoginPage{
         allureReporter.endStep();
     }
 }
+
+export default new LoginPage();
